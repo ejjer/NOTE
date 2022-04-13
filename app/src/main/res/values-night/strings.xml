@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NOTE</string>
     <string name="note1">Заметка 1</string>
     <string name="note2">Заметка 2</string>
     <string name="note3">Заметка 3</string>
