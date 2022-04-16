@@ -16,12 +16,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
-
-
 public class NotesListFragment extends Fragment {
 
-    public static final  String NOTES_CLICKED_KEY = "NOTES_CLICKED_KEY";
-    public static final  String SELECTED_NOTE = "SELECTED_NOTE";
+    public static final String NOTES_CLICKED_KEY = "NOTES_CLICKED_KEY";
+    public static final String SELECTED_NOTE = "SELECTED_NOTE";
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -31,7 +29,7 @@ public class NotesListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_notes_list,container,false);
+        return inflater.inflate(R.layout.fragment_notes_list, container, false);
 
     }
 
@@ -39,22 +37,22 @@ public class NotesListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        List<Note> noteList=InMemoryNotesRepository.getInstance(requireContext()).getAll();
+        List<Note> noteList = InMemoryNotesRepository.getInstance(requireContext()).getAll();
 
         LinearLayout container = view.findViewById(R.id.container);
 
-        for(Note note: notes){
-            View itemView = LayoutInflater.from(requireContext()).inflate(R.layout.item_note,container,false);
+        for (Note note : notes) {
+            View itemView = LayoutInflater.from(requireContext()).inflate(R.layout.item_note, container, false);
 
             itemView.findViewById(R.id.root).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                         Bundle bundle = new Bundle();
-                        bundle.putParcelable(SELECTED_NOTE,note);
+                        bundle.putParcelable(SELECTED_NOTE, note);
                         getParentFragmentManager()
-                                .setFragmentResult(NOTES_CLICKED_KEY,bundle);
-                    }else {
+                                .setFragmentResult(NOTES_CLICKED_KEY, bundle);
+                    } else {
                         NoteDetailActivity.show(requireContext(), note);
                     }
 

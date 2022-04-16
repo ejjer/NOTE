@@ -12,7 +12,7 @@ public class InMemoryNotesRepository implements NotesRepository {
     private static NotesRepository INSTANCE;
 
     public static NotesRepository getInstance(Context context) {
-        if (INSTANCE == null){
+        if (INSTANCE == null) {
             INSTANCE = new InMemoryNotesRepository(context);
         }
         return INSTANCE;

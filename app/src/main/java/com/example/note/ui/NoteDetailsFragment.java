@@ -16,7 +16,7 @@ public class NoteDetailsFragment extends Fragment {
 
     private static final String ARG_NOTE = "ARG_NOTE";
 
-    private static TextView title ;
+    private static TextView title;
 
     public static NoteDetailsFragment newInstance(Note note) {
 
@@ -29,15 +29,14 @@ public class NoteDetailsFragment extends Fragment {
     }
 
 
-
-    public NoteDetailsFragment(){
+    public NoteDetailsFragment() {
         super(R.layout.fragment_note_details);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        title =view.findViewById(R.id.title);
+        title = view.findViewById(R.id.title);
 
         getParentFragmentManager()
                 .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {
@@ -48,17 +47,17 @@ public class NoteDetailsFragment extends Fragment {
                         showNote(note);
                     }
                 });
-        if (getArguments() != null && getArguments().containsKey(ARG_NOTE)){
+        if (getArguments() != null && getArguments().containsKey(ARG_NOTE)) {
 
-       Note note = getArguments().getParcelable(ARG_NOTE);
+            Note note = getArguments().getParcelable(ARG_NOTE);
 
             showNote(note);
         }
 
 
-
     }
-    private void showNote(Note note){
+
+    private void showNote(Note note) {
         title.setText(note.getName);
     }
 }
