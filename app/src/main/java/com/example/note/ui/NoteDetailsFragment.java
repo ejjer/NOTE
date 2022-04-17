@@ -44,7 +44,7 @@ public class NoteDetailsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         title = view.findViewById(R.id.title);
 
-        getParentFragmentManager()
+       getParentFragmentManager()
                 .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {
                     @Override
                     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {

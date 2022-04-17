@@ -59,6 +59,8 @@ public class NotesListFragment extends Fragment {
         LinearLayout container = view.findViewById(R.id.container);
 
 
+
+
         for (Note note : noteList) {
             View itemView = LayoutInflater.from(requireContext()).inflate(R.layout.item_note, container, false);
 
