@@ -10,15 +10,21 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
+import com.example.note.domain.*;
+import com.example.note.R;
+
+
 import java.nio.channels.SelectionKey;
 
 public class NoteDetailsFragment extends Fragment {
 
     private static final String ARG_NOTE = "ARG_NOTE";
 
-    private static TextView title;
 
-    public static NoteDetailsFragment newInstance(Note note) {
+    private static TextView title;
+    private Object NotesListFragment;
+
+   /* public static NoteDetailsFragment newInstance(Note note) {
 
         Bundle args = new Bundle();
         args.putParcelable(ARG_NOTE, note);
@@ -26,7 +32,7 @@ public class NoteDetailsFragment extends Fragment {
         NoteDetailsFragment fragment = new NoteDetailsFragment();
         fragment.setArguments(args);
         return fragment;
-    }
+    }*/
 
 
     public NoteDetailsFragment() {
@@ -42,7 +48,7 @@ public class NoteDetailsFragment extends Fragment {
                 .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {
                     @Override
                     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                        Note note = result.getParcelable(NotesListFragment, SELECKTED_NOTE);
+                        Note note = (Note) result.getParcelable(NotesListFragment, SELECTED_NOTE);
 
                         showNote(note);
                     }
@@ -58,6 +64,6 @@ public class NoteDetailsFragment extends Fragment {
     }
 
     private void showNote(Note note) {
-        title.setText(note.getName);
+        title.setText(note.getName());
     }
 }

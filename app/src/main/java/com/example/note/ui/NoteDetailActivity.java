@@ -1,12 +1,14 @@
 package com.example.note.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.note.R;
+import com.example.note.domain.Note;
+
 
 public class NoteDetailActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class NoteDetailActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             Note note = getIntent().getParcelableExtra(EXTRA_NOTE);
 
-            NotesListFragment notesListFragment = NotesListFragment.newInstance(note);
+            NoteDetailsFragment notesListFragment = NotesListFragment.newInstance(note);
 
             getSupportFragmentManager()
                     .beginTransaction()
