@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +25,7 @@ public class NoteDetailsFragment extends Fragment {
     private static TextView title;
     private Object NotesListFragment;
 
-   /* public static NoteDetailsFragment newInstance(Note note) {
+    public static NoteDetailsFragment newInstance(Note note) {
 
         Bundle args = new Bundle();
         args.putParcelable(ARG_NOTE, note);
@@ -32,7 +33,7 @@ public class NoteDetailsFragment extends Fragment {
         NoteDetailsFragment fragment = new NoteDetailsFragment();
         fragment.setArguments(args);
         return fragment;
-    }*/
+    }
 
 
     public NoteDetailsFragment() {
@@ -42,9 +43,20 @@ public class NoteDetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
         title = view.findViewById(R.id.title);
 
-       getParentFragmentManager()
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager()
+                        .popBackStack();
+            }
+        });
+
+        getParentFragmentManager()
                 .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {
                     @Override
                     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {

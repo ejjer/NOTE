@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -58,7 +59,17 @@ public class NotesListFragment extends Fragment {
 
         LinearLayout container = view.findViewById(R.id.container);
 
-
+        Toolbar toolbar = view.findViewById(R.id.calendar_toolbar);//nen
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new NoteCalendarFragment())
+                        .addToBackStack("calendar_toolbar")
+                        .commit();
+            }
+        });
 
 
         for (Note note : noteList) {
@@ -67,14 +78,12 @@ public class NotesListFragment extends Fragment {
             itemView.findViewById(R.id.root).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                        Bundle bundle = new Bundle();
-                        bundle.putParcelable(SELECTED_NOTE, note);
-                        getParentFragmentManager()
-                                .setFragmentResult(NOTES_CLICKED_KEY, bundle);
-                    } else {
-                        NoteDetailActivity.show(requireContext(), note);
-                    }
+
+                    getParentFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, NoteDetailsFragment.newInstance(note))
+                            .addToBackStack("details")
+                            .commit();
 
                 }
             });
