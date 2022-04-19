@@ -23,7 +23,7 @@ public class NoteDetailsFragment extends Fragment {
 
 
     private static TextView title;
-    private Object NotesListFragment;
+    //  private Object NotesListFragment;
 
     public static NoteDetailsFragment newInstance(Note note) {
 
@@ -57,10 +57,10 @@ public class NoteDetailsFragment extends Fragment {
         });
 
         getParentFragmentManager()
-                .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {
+                .setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener() {//.setFragmentResultListener(NotesListFragment.NOTES_CLICKED_KEY, getViewLifecycleOwner(), new FragmentResultListener()
                     @Override
                     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                        Note note = (Note) result.getParcelable(NotesListFragment, SELECTED_NOTE);
+                        Note note = (Note) result.getParcelable(NotesListFragment.SELECTED_NOTE);//(NoteListFragment, SELECTED_NOTE)
 
                         showNote(note);
                     }
