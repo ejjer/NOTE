@@ -1,29 +1,26 @@
 package com.example.note.ui;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toolbar;
-
+import androidx.appcompat.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
-import com.example.note.domain.*;
 import com.example.note.R;
-
-
-import java.nio.channels.SelectionKey;
+import com.example.note.domain.Note;
 
 public class NoteDetailsFragment extends Fragment {
 
     private static final String ARG_NOTE = "ARG_NOTE";
 
 
+    @SuppressLint("StaticFieldLeak")
     private static TextView title;
-    //  private Object NotesListFragment;
+
 
     public static NoteDetailsFragment newInstance(Note note) {
 

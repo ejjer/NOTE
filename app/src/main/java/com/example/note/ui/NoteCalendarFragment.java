@@ -2,7 +2,7 @@ package com.example.note.ui;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
