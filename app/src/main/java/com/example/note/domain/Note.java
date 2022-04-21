@@ -6,9 +6,7 @@ import android.os.Parcelable;
 public class Note implements Parcelable {
     private final String name;
 
-    //public String getName() {
-    //  return name;
-    //}
+
 
     public Note(String name) {
         this.name = name;
