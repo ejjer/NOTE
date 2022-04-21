@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 //import android.widget.Toolbar;
-import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,8 +60,14 @@ public class NotesListFragment extends Fragment {
 
         LinearLayout container = view.findViewById(R.id.container);
 
+
         //nen
         Toolbar toolbar = view.findViewById(R.id.calendar_toolbar);
+
+        if (requireActivity() instanceof ToolbarHolder){
+            ((ToolbarHolder)requireActivity()).setToolbar(toolbar);
+        }
+
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -5,4 +5,7 @@
     <string name="note3">Заметка 3</string>
     <string name="note4">Заметка 4</string>
     <string name="notes">Заметки</string>
+    <string name="calendar">Calendar</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
 </resources>

@@ -4,7 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import androidx.appcompat.widget.Toolbar;
+import android.widget.Toolbar;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -45,6 +46,11 @@ public class NoteDetailsFragment extends Fragment {
         title = view.findViewById(R.id.title);
 
         Toolbar toolbar = view.findViewById(R.id.toolbar);
+
+        if (requireActivity() instanceof ToolbarHolder){
+            ((ToolbarHolder)requireActivity()).setToolbar(toolbar);
+        }
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
