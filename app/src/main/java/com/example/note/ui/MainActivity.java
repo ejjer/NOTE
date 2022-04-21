@@ -7,7 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.note.R;
 import com.google.android.material.navigation.NavigationView;
