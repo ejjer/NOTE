@@ -20,7 +20,7 @@ public class NoteDetailsFragment extends Fragment {
 
 
     @SuppressLint("StaticFieldLeak")
-    private static TextView title;
+    private TextView title;//static
 
 
     public static NoteDetailsFragment newInstance(Note note) {
