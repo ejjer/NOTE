@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.note.R;
@@ -21,18 +22,7 @@ public class MainActivity extends AppCompatActivity implements ToolbarHolder {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         drawerLayout = findViewById(R.id.drawer);
-
-//        ActionBarDrawerToggle actionBarDrawerToggle=new ActionBarDrawerToggle(
-//
-//                this,
-//                drawerLayout,
-//                toolbar,
-//                R.string.drawer_open,
-//                R.string.drawer_close
-//        );
-//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-//        actionBarDrawerToggle.syncState();
+        drawerLayout = findViewById(R.id.drawer);
 
 
         NavigationView navigationView = findViewById(R.id.navigation);
@@ -68,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements ToolbarHolder {
 
     @Override
     public void setToolbar(Toolbar toolbar) {
-        ActionBarDrawerToggle actionBarDrawerToggle=new ActionBarDrawerToggle(
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
 
                 this,
                 drawerLayout,
