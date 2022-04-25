@@ -1,7 +1,7 @@
 package com.example.note.ui;
 
-import static androidx.core.content.ContentProviderCompat.requireContext;
 
+import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
@@ -80,20 +80,20 @@ public class MainActivity extends AppCompatActivity implements ToolbarHolder {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        new AlertDialog.Builder(requireContext())
+        new AlertDialog.Builder(MainActivity.this)
                 .setTitle("Exit")
                 .setMessage("do you want to get out?")
                 .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(requireContext(), "Exit", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Exit", Toast.LENGTH_SHORT).show();
 
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(requireContext(), "No", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "No", Toast.LENGTH_SHORT).show();
 
                     }
                 })
