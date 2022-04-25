@@ -1,12 +1,18 @@
 package com.example.note.ui;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -70,4 +76,26 @@ public class MainActivity extends AppCompatActivity implements ToolbarHolder {
         actionBarDrawerToggle.syncState();
 
     }
-}
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        new AlertDialog.Builder(requireContext())
+                .setTitle("Exit")
+                .setMessage("do you want to get out?")
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(requireContext(), "Exit", Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(requireContext(), "No", Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .show();
+    }
