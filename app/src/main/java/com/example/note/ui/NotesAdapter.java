@@ -28,6 +28,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         data.addAll(notes);
     }
 
+
     public void setNoteClicked(OnNoteClicked noteClicked) {
         this.noteClicked = noteClicked;
     }
@@ -57,9 +58,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         return data.size();
     }
 
-    interface OnNoteClicked{
+    interface OnNoteClicked {
         void onNoteClicked(Note note);
     }
+
 
     class NotesViewHolder extends RecyclerView.ViewHolder {
 
@@ -78,11 +80,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
                 @Override
                 public void onClick(View view) {
 
-                    if(noteClicked!=null){
+                    if (noteClicked != null) {
 
-                        int clickedPosition=getAdapterPosition();
+                        int clickedPosition = getAdapterPosition();
 
-                    noteClicked.onNoteClicked(data.get(clickedPosition));
+                        noteClicked.onNoteClicked(data.get(clickedPosition));
                     }
 
                 }

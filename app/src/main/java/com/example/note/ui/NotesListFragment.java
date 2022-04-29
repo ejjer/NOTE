@@ -2,8 +2,11 @@ package com.example.note.ui;
 
 
 import android.os.Bundle;
-import com.example.note.di.*;
+
 import com.example.note.domain.*;
+import com.example.note.di.*;
+import com.example.note.ui.*;
+
 import android.view.View;
 import android.widget.Toast;
 
@@ -31,7 +34,7 @@ public class NotesListFragment extends Fragment {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MM,  HH:mm", Locale.getDefault());
 
-    public NotesListFragment(){
+    public NotesListFragment() {
         super(R.layout.fragment_notes_list);
 
     }
@@ -40,14 +43,11 @@ public class NotesListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView notesList= view.findViewById(R.id.notes_list);
+        RecyclerView notesList = view.findViewById(R.id.notes_list);
 
-        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false);
         notesList.setLayoutManager(layoutManager);
 
-        DividerItemDecoration dividerItemDecoration= new DividerItemDecoration(requireContext(),LinearLayoutManager.VERTICAL);
-        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(requireContext(),R.drawable.ic_divider));
-        notesList.addItemDecoration(dividerItemDecoration);
 
         NotesAdapter adapter = new NotesAdapter();
         adapter.setNoteClicked(new NotesAdapter.OnNoteClicked() {
@@ -57,15 +57,15 @@ public class NotesListFragment extends Fragment {
             }
         });
 
-       // NotesAdapter adapter = new NotesAdapter();
+        // NotesAdapter adapter = new NotesAdapter();
         notesList.setAdapter(adapter);
 
-        adapter.setData(notes);
+        adapter.setData(notes);//notes
 
         adapter.notifyDataSetChanged();
 
 
-       // List<Note> notes = Dependencies.NOTES_REPOSITORY.getAll();
+        // List<Note> notes = Dependencies.NOTES_REPOSITORY.getAll();
 
 
     }
