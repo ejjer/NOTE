@@ -5,4 +5,7 @@
     <string name="note3">Заметка 3</string>
     <string name="note4">Заметка 2</string>
     <string name="notes">Заметки</string>
+    <string name="action_notes">Notes</string>
+    <string name="action_info">Info</string>
+    <string name="info">info</string>
 </resources>

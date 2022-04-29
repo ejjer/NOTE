@@ -3,13 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android/NOTE/app/src/main/res/drawable/ic_divider.xml" value="0.241" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout-land/actyvity_main.xml" value="0.1625" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout/activity_note_detail.xml" value="0.27291666666666664" />
+        <entry key="..\:/android/NOTE/app/src/main/res/layout/fragment_info.xml" value="0.27291666666666664" />
+        <entry key="..\:/android/NOTE/app/src/main/res/layout/fragment_note.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout/fragment_note_calendar.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout/fragment_note_details.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout/fragment_notes_list.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NOTE/app/src/main/res/layout/item_note.xml" value="0.27291666666666664" />
+        <entry key="..\:/android/NOTE/app/src/main/res/menu/bottom_navigation.xml" value="0.27291666666666664" />
         <entry key="..\:/android/NOTE/app/src/main/res/menu/menu_nav_drawer.xml" value="0.27291666666666664" />
       </map>
     </option>
