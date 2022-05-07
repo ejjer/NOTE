@@ -4,7 +4,15 @@ import java.util.List;
 
 public interface NotesRepository {
 
-    List<Note> getAll();
+    void getAll(Callback<List<Note>> callback);
 
- //   void add(Note note);
+    void addNote(String title, String massage,Callback<Note> callback);
+
+    void removeNote(Note note, Callback<Void> callback);
+
+    void updateNote(Note note,String title, String massage,Callback<Note> callback);
+
+
+
+
 }
