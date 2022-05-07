@@ -5,39 +5,32 @@ import android.content.Context;
 import com.example.note.R;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class InMemoryNotesRepository implements NotesRepository {
 
-    private static NotesRepository INSTANCE;
+    private ArrayList<Note> data = new ArrayList<>();
 
-    public static NotesRepository getInstance(Context context) {
-        if (INSTANCE == null) {
-            INSTANCE = new InMemoryNotesRepository(context);
+    public InMemoryNotesRepository() {
+        data.add(new Note(UUID.randomUUID().toString(), "Title 1", "massage 1", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 2", "massage 2", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 3", "massage 3", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 4", "massage 4", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 5", "massage 5", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 6", "massage 6", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 7", "massage 7", new Date()));
+        data.add(new Note(UUID.randomUUID().toString(), "Title 8", "massage 8", new Date()));
+
+        for (int i = 0; i < 3000; i++) {
+            data.add(new Note(UUID.randomUUID().toString(), "Title 8", "massage 8", new Date()));
         }
-        return INSTANCE;
-    }
-
-    private Context context;
-
-    private InMemoryNotesRepository(Context context) {
-        this.context = context;
     }
 
     @Override
     public List<Note> getAll() {
-        ArrayList<Note> result = new ArrayList<>();
-
-        result.add(new Note(context.getString(R.string.note1)));
-        result.add(new Note(context.getString(R.string.note2)));
-        result.add(new Note(context.getString(R.string.note3)));
-        result.add(new Note(context.getString(R.string.note4)));
-
-        return result;
-    }
-
-    @Override
-    public void add(Note note) {
-
+        return data;
     }
 }
+

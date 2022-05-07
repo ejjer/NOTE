@@ -6,5 +6,5 @@ public interface NotesRepository {
 
     List<Note> getAll();
 
-    void add(Note note);
+ //   void add(Note note);
 }

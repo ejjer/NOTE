@@ -8,4 +8,7 @@
     <string name="calendar">Calendar</string>
     <string name="drawer_open">Open drawer</string>
     <string name="drawer_close">Close drawer</string>
+    <string name="action_notes">Notes</string>
+    <string name="action_info">Info</string>
+    <string name="info">info</string>
 </resources>
