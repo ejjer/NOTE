@@ -11,4 +11,9 @@
     <string name="action_notes">Notes</string>
     <string name="action_info">Info</string>
     <string name="info">info</string>
+    <string name="title">Title</string>
+    <string name="massage">Massage</string>
+    <string name="save">Save</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
 </resources>
